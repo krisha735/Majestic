@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Itinerary Planner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="itinerary-container">
+    <h2>Itinerary Planner</h2>
+    <p><em>Plan your dream trip effortlessly.</em></p>
+
+    <!-- Date and Time Selection -->
+    <div class="selection-container">
+        <div class="date-selector">
+            <label for="itinerary-date">Choose a date:</label>
+            <input type="date" id="itinerary-date" onchange="updateDateSelection()">
+        </div>
+
+        <div class="time-selector">
+            <label for="itinerary-time">Choose time:</label>
+            <input type="time" id="itinerary-time" onchange="updateTimeSelection()">
+        </div>
+    </div>
+
+    <div class="itinerary-sections">
+        <!-- Available Places Section -->
+        <div class="places">
+            <h4>Available Places</h4>
+            <div class="place" draggable="true" ondragstart="drag(event)" data-name="Eiffel Tower" data-price="120">Eiffel Tower - $120</div>
+            <div class="place" draggable="true" ondragstart="drag(event)" data-name="Disneyland Tokyo" data-price="200">Disneyland Tokyo - $200</div>
+            <div class="place" draggable="true" ondragstart="drag(event)" data-name="Langkawi Island" data-price="80">Langkawi Island - $80</div>
+        </div>
+
+        <!-- Your Itinerary Section -->
+        <div class="drop-area">
+            <h4>Your Itinerary</h4>
+            <ul id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            <div class="total">
+                Total Estimated Cost: $<span id="total-cost">0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Custom Activity Section -->
+    <div class="manual-entry">
+        <h4>Add Custom Activity</h4>
+        <input type="text" id="custom-name" placeholder="Enter activity name" />
+        <input type="number" id="custom-price" placeholder="Enter price" />
+        <button onclick="addCustomItem()">Add to Itinerary</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/itinerary.js"></script>
+}
+
+<link rel="stylesheet" href="~/css/itinerary.css" />

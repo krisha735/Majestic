@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Booking System";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="booking-items">
+    <h2>Booking System</h2>
+
+    <label for="country-select"><strong>Select Destination Country:</strong></label>
+    <select id="country-select" onchange="countrySelected()">
+        <option value="">-- Choose a country --</option>
+        <option value="Japan">Japan</option>
+        <option value="France">France</option>
+        <option value="Malaysia">Malaysia</option>
+    </select>
+    <p id="selected-country-msg" style="margin-top: 10px;"></p>
+</div>
+
+<div class="booking-options">
+    <div class="card">
+        <img src="~/images/flight.jpg" alt="Flight Image" />
+        <h4>Flight</h4>
+        <p>Book your flights for only $300!</p>
+        <button onclick="addItem('Flight', 300)">Add Flight</button>
+    </div>
+    <div class="card">
+        <img src="~/images/hotel.jpg" alt="Hotel Image" />
+        <h4>Hotel</h4>
+        <p>Stay in comfort for $500.</p>
+        <button onclick="addItem('Hotel', 500)">Add Hotel</button>
+    </div>
+    <div class="card">
+        <img src="~/images/tour.jpg" alt="Tour Image" />
+        <h4>Tour</h4>
+        <p>Explore for just $150.</p>
+        <button onclick="addItem('Tour', 150)">Add Tour</button>
+    </div>
+</div>
+
+<div id="checkout" style="display:none;">
+    <h3>Checkout Summary</h3>
+
+    <p><strong>Destination:</strong> <span id="checkout-country"></span></p>
+    <div style="text-align: center; margin: 15px 0;">
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+        <span style="margin: 0 10px; color: #888;">• • •</span>
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+    </div>
+
+    <ul id="selected-items"></ul>
+    <div style="text-align: center; margin: 15px 0;">
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+        <span style="margin: 0 10px; color: #888;">• • •</span>
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+    </div>
+
+    <p>Total Price: $<span id="total-price">0.00</span></p>
+    <div style="text-align: center; margin: 15px 0;">
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+        <span style="margin: 0 10px; color: #888;">• • •</span>
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+    </div>
+
+    <div id="promo-section">
+        <label for="promo">Promo Code:</label>
+        <input type="text" id="promo" placeholder="Enter code e.g. MAJESTIC10" />
+        <button onclick="applyPromo()">Apply</button>
+        <p id="discount-msg"></p>
+    </div>
+    <div style="text-align: center; margin: 15px 0;">
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+        <span style="margin: 0 10px; color: #888;">• • •</span>
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+    </div>
+
+    <p><strong>Final Price: $<span id="final-price">0.00</span></strong></p>
+    <div style="text-align: center; margin: 15px 0;">
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+        <span style="margin: 0 10px; color: #888;">• • •</span>
+        <span style="border-top: 1px solid #ccc; display: inline-block; width: 40%;"></span>
+    </div>
+
+    <button onclick="completePayment()">Complete Payment</button>
+</div>
+
+
+<div id="payment-success-msg" style="display:none; background: #e7f7e7; padding: 20px; border-radius: 8px; margin-top: 20px;">
+    <!-- Success message will be dynamically added here -->
+</div>
+
+@section Scripts {
+    <script src="~/js/booking.js"></script>
+}
+
+<link href="~/css/booking.css" rel="stylesheet" />

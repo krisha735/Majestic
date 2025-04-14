@@ -1,0 +1,171 @@
+/* Overall container styling */
+.itinerary-container {
+    padding: 20px;
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+/* Date and Time selection styling */
+.selection-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.date-selector, .time-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input[type="date"], input[type="time"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Available Places Section */
+.places {
+    width: 45%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.place {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #e2f0fb;
+    cursor: grab;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+    .place:hover {
+        background-color: #cce4f7;
+    }
+
+/* Drop Area Styling (for itinerary items) */
+.drop-area {
+    width: 45%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff8e1;
+}
+
+#drop-zone {
+    min-height: 120px;
+    padding: 10px;
+    background-color: #fff8e1;
+    border: 2px dashed #ccc;
+    list-style: none;
+    margin: 0;
+}
+
+    #drop-zone li {
+        background-color: #f0f8ff;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+/* Total cost section */
+.total {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Manual entry section */
+.manual-entry {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .manual-entry h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .manual-entry input {
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        width: 45%;
+        font-size: 1rem;
+    }
+
+    .manual-entry button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+        .manual-entry button:hover {
+            background-color: #0056b3;
+        }
+
+/* Button Styling */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #218838;
+    }
+
+/* Hover effects for itinerary items */
+#drop-zone li:hover {
+    background-color: #cce4f7;
+}
+
+/* Styling for drop area */
+#drop-zone {
+    min-height: 120px;
+    padding: 10px;
+    background-color: #fff8e1;
+    border: 2px dashed #ccc;
+    list-style-type: none;
+    margin: 0;
+}
+
+/* General container padding and margin adjustments */
+.itinerary-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+#itinerary-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+    #itinerary-items li {
+        background-color: #f0f8ff;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
