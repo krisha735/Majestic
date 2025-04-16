@@ -1,0 +1,33 @@
+﻿@page
+@model Majestic.Models.Destination
+@{
+    ViewData["Title"] = "Add Destination";
+}
+
+<h2>Add Destination</h2>
+
+<form asp-action="Add" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+    </div>
+    <div>
+        <label asp-for="Package"></label>
+        <input asp-for="Package" />
+    </div>
+    <div>
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" />
+    </div>
+    <button type="submit">Add Destination</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
