@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majestic", "Majestic\Majestic.csproj", "{CD48DC04-8552-45C7-95B4-5508D0E987BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majestic", "Majestic\Majestic.csproj", "{B3392FC9-4516-44B0-B8C4-4180DD83FACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD48DC04-8552-45C7-95B4-5508D0E987BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD48DC04-8552-45C7-95B4-5508D0E987BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD48DC04-8552-45C7-95B4-5508D0E987BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD48DC04-8552-45C7-95B4-5508D0E987BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3392FC9-4516-44B0-B8C4-4180DD83FACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3392FC9-4516-44B0-B8C4-4180DD83FACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3392FC9-4516-44B0-B8C4-4180DD83FACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3392FC9-4516-44B0-B8C4-4180DD83FACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {34E79F75-6E76-4305-8651-DFDD4069BFC5}
+		SolutionGuid = {9A2BED37-5DF1-4214-A106-32894468C56D}
 	EndGlobalSection
 EndGlobal
