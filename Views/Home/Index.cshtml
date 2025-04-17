@@ -1,8 +1,144 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Majestic.ViewModels.DestinationListViewModel
+
+@{
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the World with Ease</title>
+
+    <link href="~/css/Styles.css" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= Header Section Starts ================= -->
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><span>M</span>ajestic</a>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#Book">Book</a>
+            <a href="#Accomodations">Accommodations</a>
+            <a href="#Blog Page">Blog</a>
+            <a href="#Offers">Promotions</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-users" id="login-btn"></i>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here..." />
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+    <!-- ================= Header Section Ends ================= -->
+    <!-- ================= Home Section Starts ================= -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Explore the World with Ease</h3>
+            <p>Plan Your Trip Now!!</p>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" data-src="Videos/vid1.mp4"></span>
+            <span class="vid-btn" data-src="Videos/vid2.mp4"></span>
+            <span class="vid-btn" data-src="Videos/vid3.mp4"></span>
+            <span class="vid-btn" data-src="Videos/vid4.mp4"></span>
+        </div>
+
+        <div class="video-container">
+            <video src="Videos/vid1.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+    </section>
+    <!-- ================= Home Section Ends ================= -->
+    <!-- ================= Testimonials Section Starts ================= -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Travelers Say</h2>
+        <div class="testimonial-container">
+
+            <div class="testimonial">
+                <div class="user-info">
+                    <img src="Images/avatar1.jpg" alt="User Avatar">
+                    <h4>Michaella</h4>
+                    <span>★★★★★</span>
+                </div>
+                <p>"Bali was absolutely breathtaking! The trip was perfectly organized, and I felt cared for every step of the way. Can't wait for my next adventure!"</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="user-info">
+                    <img src="Images/avatar3.jpg" alt="User Avatar">
+                    <h4>Rahmen</h4>
+                    <span>★★★★★</span>
+                </div>
+                <p>"Paris was magical! The itinerary was perfect, and I loved how easy it was to book everything. Highly recommend Majestic Travel!"</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="user-info">
+                    <img src="Images/avatar2.jpg" alt="User Avatar">
+                    <h4>Nur Aisha</h4>
+                    <span>★★★★☆</span>
+                </div>
+                <p>"Langkawi is a hidden gem! The island hopping tour was unforgettable, and everything was seamless thanks to Majestic Travel."</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= Testimonials Section Ends ================= -->
+    <!-- ================= Destination Section Starts ================= -->
+    <section class="destination">
+        <h2>Top Travel Destinations</h2>
+
+        @foreach (var destination in Model.Destinations)
+        {
+            <div class="box">
+                <span class="discount">Exclusive Deal!</span>
+
+                <div class="image">
+                    <img src="@Url.Content("~/Images/" + destination.ImageUrl)" alt="@destination.Name" />
+                    <div class="icons">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-share"></a>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h3>@destination.Name</h3>
+                    <p>@destination.Description</p>
+                    <p><strong>@destination.Package</strong></p>
+                    <a href="#" class="btn-book">Book Now</a>
+
+                    @if (Model.IsAdmin)
+                    {
+                        <div class="admin-controls">
+                            <a href="@Url.Action("Edit", "Destination", new { id = destination.Id })" class="btn btn-warning">Edit</a>
+                            <a href="@Url.Action("Delete", "Destination", new { id = destination.Id })" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this destination?')">Delete</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+    </section>
+    <!-- ================= Destination Section Ends ================= -->
+
+    <script src="~/js/Script.js"></script>
+</body>
+</html>
